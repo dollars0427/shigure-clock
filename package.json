@@ -1,0 +1,17 @@
+{
+  "name": "shigure-clock",
+  "version": "1.0.0",
+  "description": "有時雨報時的小鬧鐘",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "dependencies": {
+    "electron-packager": "^13.1.1",
+    "moment": "^2.24.0",
+    "play-sound": "^1.1.3"
+  },
+  "devDependencies": {
+    "electron": "^4.1.4"
+  }
+}
