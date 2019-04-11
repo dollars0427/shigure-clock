@@ -7,7 +7,6 @@ clock.innerText = nowTime;
 setInterval(function(){
   let fullTime = moment().format('HH:mm:ss');
   nowTime = moment().format('HH:mm');
-  console.log(fullTime);
   checkTime(fullTime);
   clock.innerText = nowTime;
 }, 1000);

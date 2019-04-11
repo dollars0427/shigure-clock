@@ -9,6 +9,7 @@ const path = require('path')
 const url = require('url')
 
 let mainWindow;
+let tray;
 
 function createTray(){
   let appIcon = null
@@ -33,9 +34,9 @@ function createTray(){
     }
   }
 ]);
-appIcon = new Tray(icon);
-appIcon.setToolTip('Shigure Clock')
-appIcon.setContextMenu(contextMenu);
+tray = new Tray(icon);
+tray.setToolTip('Shigure Clock')
+tray.setContextMenu(contextMenu);
 }
 
 function createWindow () {
@@ -65,7 +66,9 @@ function createWindow () {
 app.on('ready', createWindow)
 
 app.on('window-all-closed', function () {
-  app.quit();
+  if (process.platform !== 'darwin') {
+    app.quit()
+  }
 })
 
 app.on('activate', function () {
