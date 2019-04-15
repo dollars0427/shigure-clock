@@ -46,6 +46,9 @@ function createWindow () {
     transparent: true,
     frame: false,
     alwaysOnTop:true,
+    webPreferences: {
+      webSecurity: false
+    }
   })
 
   mainWindow.loadURL(url.format({
@@ -62,6 +65,8 @@ function createWindow () {
   })
   createTray();
 }
+
+app.commandLine.appendSwitch('autoplay-policy', 'no-user-gesture-required');
 
 app.on('ready', createWindow)
 
